@@ -361,11 +361,11 @@
         }
 
         .category-block.giftable {
-            background-color: var(--fff9f0);
+            background-color: #fff9f0;
             border: 1px solid #f3e2c4;
         }
         .category-block.giftable h3 {
-            color: var(--8c6210);
+            color: #8c6210;
             border-bottom: 2px solid var(--primary-gold);
         }
 
@@ -394,7 +394,11 @@
         .no-products-msg {
             color: #777;
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            text-align: center;
+            padding: 20px;
+            letter-spacing: 1px;
+            font-family: 'Cinzel', serif;
         }
 
         .product-card {
@@ -1280,13 +1284,16 @@
             ];
 
             categories.forEach(cat => {
-                const filteredItems = myJewelleryItems.filter(item => {
-                    if (item.category !== cat.id) return false;
+                const catItems = myJewelleryItems.filter(item => item.category === cat.id);
 
+                catItems.forEach(item => {
                     if(!item.weights && item.weight) item.weights = [item.weight];
                     if(!item.selectedCarat) item.selectedCarat = item.carat || (item.metal === 'gold' ? 22 : 925);
                     if(!item.selectedWeight) item.selectedWeight = item.weights[0];
+                });
 
+                // 1. Try strict filtering first
+                let matchedItems = catItems.filter(item => {
                     if (filterMetal !== 'all' && item.metal !== filterMetal) return false;
                     if (filterCarat !== 'all' && String(item.selectedCarat) !== String(filterCarat)) return false;
 
@@ -1299,16 +1306,34 @@
                     return true;
                 });
 
+                // 2. If strict match yields nothing, check for partial matches (sharing at least 1 preference)
+                if (matchedItems.length === 0 && catItems.length > 0) {
+                    matchedItems = catItems.filter(item => {
+                        const itemPrice = calculateItemPrice(item, item.selectedCarat, item.selectedWeight);
+                        let matchesAny = false;
+
+                        if (filterMetal !== 'all' && item.metal === filterMetal) matchesAny = true;
+                        if (filterCarat !== 'all' && String(item.selectedCarat) === String(filterCarat)) matchesAny = true;
+                        
+                        if (filterPrice === 'under25k' && itemPrice < 25000) matchesAny = true;
+                        if (filterPrice === '25k-50k' && (itemPrice >= 25000 && itemPrice <= 50000)) matchesAny = true;
+                        if (filterPrice === '50k-1l' && (itemPrice >= 50000 && itemPrice <= 100000)) matchesAny = true;
+                        if (filterPrice === 'above1l' && itemPrice > 100000) matchesAny = true;
+
+                        return matchesAny;
+                    });
+                }
+
                 let blockHTML = `
                     <div class="category-block ${cat.className}">
                         <h3 class="category-title">${cat.name}</h3>
                 `;
 
-                if(filteredItems.length === 0) {
-                    blockHTML += `<p class="no-products-msg">No products match your selected filter criteria in this section.</p>`;
+                if(matchedItems.length === 0) {
+                    blockHTML += `<p class="no-products-msg">Coming Soon — New Masterpieces in Crafting.</p>`;
                 } else {
                     blockHTML += `<div class="item-grid">`;
-                    filteredItems.forEach((item) => {
+                    matchedItems.forEach((item) => {
                         const globalIndex = myJewelleryItems.indexOf(item);
                         const calculatedPrice = calculateItemPrice(item, item.selectedCarat, item.selectedWeight);
                         const formattedPrice = calculatedPrice.toLocaleString('en-IN');
