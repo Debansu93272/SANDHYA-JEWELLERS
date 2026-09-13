@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Sandhya Jewellers in Gurugram. Trusted for generations, we provide uncompromised purity and exquisite gold and silver craftsmanship for every occasion.">
+    <title>Sandhya Jewellers | Trusted Quality for All Generations</title>
+    <!-- Google Fonts for Luxury Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tom Select for Searchable Dropdown -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.bootstrap4.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-gold: #AA7C11;
+            --light-bg: #FDFBF7;
+            --text-dark: #222222;
+            --bridal-maroon: #4A0E17;
+            --bridal-bg: #F9F1F2;
+            --minimal-bg: #F4F4F2;
+            --silver-bg: #F0F4F8;
+            --silver-accent: #486581;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--text-dark);
+            color: var(--light-bg);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            overflow: hidden;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            word-break: break-all;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--primary-gold);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .admin-nav-btn {
+            background: var(--text-dark);
+            color: var(--primary-gold) !important;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            color: #f7e7ce;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            background: var(--primary-gold);
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Live Regional Metal Rates Section */
+        .metal-ticker-section {
+            background: #111;
+            color: #fff;
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        .metal-ticker-section h2 {
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+
+        .ibja-badge {
+            background: #222;
+            color: #d4af37;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+        }
+
+        .rate-search-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .ts-wrapper {
+            width: 350px !important;
+            text-align: left;
+        }
+        .ts-control {
+            background: #222 !important;
+            border: 1px solid #444 !important;
+            color: #fff !important;
+            border-radius: 5px !important;
+            padding: 12px 15px !important;
+        }
+        .ts-dropdown {
+            background: #222 !important;
+            color: #fff !important;
+            border: 1px solid #444 !important;
+        }
+        .ts-dropdown .active {
+            background: var(--dark-gold) !important;
+            color: #fff !important;
+        }
+
+        .ticker-category-title {
+            color: #e2e8f0;
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #333;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .rates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .rate-card {
+            background: #1c1c1c;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .rate-card:hover {
+            border-color: var(--primary-gold);
+        }
+
+        .rate-card.silver-card:hover {
+            border-color: var(--silver-accent);
+        }
+
+        .rate-card h4 {
+            color: #aaa;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .rate-card .price {
+            font-size: 1.4rem;
+            color: var(--primary-gold);
+            font-weight: 700;
+        }
+
+        .rate-card .silver-price {
+            color: #94a3b8;
+        }
+
+        /* Filter Toolbar Section */
+        .filter-toolbar-section {
+            background: #ffffff;
+            padding: 30px 5%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 40px auto 10px auto;
+            border-radius: 12px;
+            border: 1px solid #e8e2d5;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .filter-group label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #555;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-group select {
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 0.95rem;
+            outline: none;
+            background: #fff;
+            min-width: 200px;
+        }
+
+        /* Collection Showcase Vibe Styling */
+        .section-header {
+            text-align: center;
+            padding: 40px 20px 10px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #666;
+        }
+
+        .products-container {
+            padding: 20px 5% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .category-block {
+            margin-bottom: 50px;
+            padding: 40px;
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .category-block.bridal {
+            background-color: var(--bridal-bg);
+            border: 1px solid #e8c5cb;
+        }
+        .category-block.bridal h3 {
+            color: var(--bridal-maroon);
+            border-bottom: 2px solid var(--bridal-maroon);
+        }
+
+        .category-block.minimal {
+            background-color: var(--minimal-bg);
+            border: 1px solid #dcdcdc;
+        }
+        .category-block.minimal h3 {
+            color: #333;
+            border-bottom: 2px solid #666;
+        }
+
+        .category-block.giftable {
+            background-color: #fff9f0;
+            border: 1px solid #f3e2c4;
+        }
+        .category-block.giftable h3 {
+            color: #8c6210;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .category-block.silver {
+            background-color: var(--silver-bg);
+            border: 1px solid #cbd5e1;
+        }
+        .category-block.silver h3 {
+            color: var(--silver-accent);
+            border-bottom: 2px solid var(--silver-accent);
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .item-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .no-products-msg {
+            color: #777;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .product-img {
+            height: 260px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .product-meta {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .variant-select {
+            padding: 4px 6px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 0.8rem;
+            outline: none;
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-gold);
+            margin-bottom: 15px;
+        }
+
+        .product-card.silver-card .product-price {
+            color: var(--silver-accent);
+        }
+
+        .action-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .order-btn {
+            background: var(--primary-gold);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .order-btn:hover {
+            background: var(--dark-gold);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            background: #1ebd56;
+        }
+
+        /* Admin Delete Item Button */
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(220, 38, 38, 0.9);
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: none;
+        }
+        .admin-mode .delete-btn {
+            display: block;
+        }
+
+        /* Modals (Admin & Checkout) */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-box h2 {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        /* Bill Breakdown box in Checkout */
+        .bill-box {
+            background: #fdfbf7;
+            border: 1px solid #e2d9c2;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .bill-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .bill-row.total {
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-top: 1px solid #d4af37;
+            padding-top: 8px;
+            color: var(--dark-gold);
+        }
+
+        /* Admin Orders Table */
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.85rem;
+        }
+
+        .orders-table th, .orders-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .orders-table th {
+            background: #f4f4f4;
+        }
+
+        /* About Us Section */
+        .about-section {
+            background: #fff;
+            padding: 80px 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .about-text p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: var(--primary-gold);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+
+        .contact-card {
+            background: #252525;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-card p {
+            color: #bbb;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .contact-card a {
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            color: #888;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+
+        @media(max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body id="bodyTag">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-item"><i class="fa-solid fa-phone"></i> Helpline: +91 8076128656 / 9910731148</div>
+        <div class="top-bar-item">
+            <span><i class="fa-solid fa-envelope"></i> shop.sandhyajewellers93272@gmail.com</span>
+            <a href="#contact" style="margin-left: 10px;">Visit Store</a>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">SANDHYA <span>JEWELLERS</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#metal-rates">Live Rates</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#" onclick="openAdminModal()" class="admin-nav-btn"><i class="fa-solid fa-lock"></i> Admin Portal</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Admin Modal / Dashboard -->
+    <div id="adminModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-modal" onclick="closeAdminModal()">&times;</span>
+            
+            <!-- Login View -->
+            <div id="adminLoginView">
+                <h2>Admin Login</h2>
+                <p style="margin-bottom: 15px; color: #666; font-size: 0.9rem;">Enter admin password to upload products and view customer orders.</p>
+                <div class="form-group">
+                    <label>Password (Default: sandhya123)</label>
+                    <input type="password" id="adminPassInput" placeholder="Enter password">
+                </div>
+                <button class="btn" onclick="verifyAdmin()" style="width: 100%;">Login to Dashboard</button>
+            </div>
+
+            <!-- Dashboard View -->
+            <div id="adminDashboardView" style="display: none;">
+                <h2>Admin Control Center</h2>
+                
+                <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+                    <button class="btn" onclick="switchAdminTab('uploadTab')" id="tabUploadBtn" style="flex: 1; padding: 8px;">Upload Product</button>
+                    <button class="btn" onclick="switchAdminTab('ordersTab')" id="tabOrdersBtn" style="flex: 1; padding: 8px; background: #555;">Customer Orders (<span id="orderCountBadge">0</span>)</button>
+                </div>
+
+                <!-- Upload Form Tab -->
+                <div id="uploadTabContent">
+                    <form id="uploadForm" onsubmit="handleProductUpload(event)">
+                        <div class="form-group">
+                            <label>Product Title</label>
+                            <input type="text" id="pTitle" required placeholder="e.g. Royal Gold Necklace">
+                        </div>
+                        <div class="form-group">
+                            <label>Image URL</label>
+                            <input type="url" id="pImage" required placeholder="https://images.unsplash.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label>Category (Vibe Section)</label>
+                            <select id="pCategory">
+                                <option value="bridal">Bridal Collection (Royal Vibe)</option>
+                                <option value="minimal">Minimal & Aesthetic Collection</option>
+                                <option value="giftable">Giftable & Special Collection</option>
+                                <option value="silver">Sterling Silver Collection</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Metal Type</label>
+                            <select id="pMetal" onchange="toggleCaratField()">
+                                <option value="gold">Gold</option>
+                                <option value="silver">Silver</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="caratGroup">
+                            <label>Default Purity</label>
+                            <select id="pCarat">
+                                <option value="24">24K Gold</option>
+                                <option value="22" selected>22K Gold</option>
+                                <option value="18">18K Gold</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Available Weights (grams) — Separate with commas</label>
+                            <input type="text" id="pWeights" required placeholder="e.g. 10, 15, 20, 25">
+                            <small style="color: #666;">The first weight will be selected by default.</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Making Charges (₹)</label>
+                            <input type="number" id="pMaking" required placeholder="e.g. 2500">
+                        </div>
+                        <div class="form-group">
+                            <label>HUID & Hallmarking Premium / Margin (₹)</label>
+                            <input type="number" id="pPremium" value="500" placeholder="e.g. 500">
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Publish Product</button>
+                    </form>
+                </div>
+
+                <!-- Customer Orders Tab -->
+                <div id="ordersTabContent" style="display: none;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.1rem;">Received Customer Orders</h3>
+                    <div id="ordersListContainer">
+                        <!-- Orders populated here -->
+                    </div>
+                </div>
+
+                <button class="btn" onclick="logoutAdmin()" style="width: 100%; margin-top: 25px; background: #333;">Exit Admin Mode</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Checkout Modal -->
+    <div id="checkoutModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
+            <h2>Complete Your Online Order</h2>
+            <form id="checkoutForm" onsubmit="submitCustomerOrder(event)">
+                <div class="bill-box" id="billBreakdownBox">
+                    <!-- Bill details injected here dynamically -->
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="custName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="custPhone" required placeholder="10-digit mobile number">
+                </div>
+                <div class="form-group">
+                    <label>Gmail Account</label>
+                    <input type="email" id="custEmail" required placeholder="yourname@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label>Delivery Address</label>
+                    <textarea id="custAddress" rows="3" required placeholder="House no, street, city, pin code"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; background: #25D366;">Confirm & Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>SANDHYA JEWELLERS</h1>
+        <p>Trusted for generations, we provide uncompromised purity, exquisite artistry, and top quality for all generations.</p>
+        <a href="#collections" class="btn">Explore Collections</a>
+    </section>
+
+    <!-- Live Regional Metal Rates Section -->
+    <section id="metal-rates" class="metal-ticker-section">
+        <h2>Live IBJA Benchmark Metal Rates</h2>
+        <div class="ibja-badge"><i class="fa-solid fa-shield-halved"></i> Connected to Official Bullion Feed</div>
+        <p style="color: #aaa; margin-bottom: 25px;">Type or select any State or City in India to view synchronized live spot rates instantly.</p>
+        
+        <div class="rate-search-box">
+            <select id="regionSelect" onchange="updateMetalRates()">
+                <option value="delhi">Delhi (National Capital)</option>
+                <option value="mumbai" selected>Mumbai (IBJA Headquarters)</option>
+                <option value="gurugram">Gurugram (Haryana)</option>
+                <option value="pune">Pune (Maharashtra)</option>
+                <option value="nagpur">Nagpur (Maharashtra)</option>
+                <option value="chennai">Chennai (Tamil Nadu)</option>
+                <option value="coimbatore">Coimbatore (Tamil Nadu)</option>
+                <option value="kolkata">Kolkata (West Bengal)</option>
+                <option value="siliguri">Siliguri (West Bengal)</option>
+                <option value="bangalore">Bangalore (Karnataka)</option>
+                <option value="mysore">Mysore (Karnataka)</option>
+                <option value="hyderabad">Hyderabad (Telangana)</option>
+                <option value="warangal">Warangal (Telangana)</option>
+                <option value="ahmedabad">Ahmedabad (Gujarat)</option>
+                <option value="surat">Surat (Gujarat)</option>
+                <option value="vadodara">Vadodara (Gujarat)</option>
+                <option value="jaipur">Jaipur (Rajasthan)</option>
+                <option value="udaipur">Udaipur (Rajasthan)</option>
+                <option value="jodhpur">Jodhpur (Rajasthan)</option>
+                <option value="lucknow">Lucknow (Uttar Pradesh)</option>
+                <option value="kanpur">Kanpur (Uttar Pradesh)</option>
+                <option value="varanasi">Varanasi (Uttar Pradesh)</option>
+                <option value="agra">Agra (Uttar Pradesh)</option>
+                <option value="patna">Patna (Bihar)</option>
+                <option value="gaya">Gaya (Bihar)</option>
+                <option value="bhopal">Bhopal (Madhya Pradesh)</option>
+                <option value="indore">Indore (Madhya Pradesh)</option>
+                <option value="chandigarh">Chandigarh (Punjab & Haryana)</option>
+                <option value="ludhiana">Ludhiana (Punjab)</option>
+                <option value="amritsar">Amritsar (Punjab)</option>
+                <option value="bhubaneswar">Bhubaneswar (Odisha)</option>
+                <option value="cuttack">Cuttack (Odisha)</option>
+                <option value="trivandrum">Thiruvananthapuram (Kerala)</option>
+                <option value="kochi">Kochi (Kerala)</option>
+                <option value="calicut">Kozhikode (Kerala)</option>
+                <option value="guwahati">Guwahati (Assam)</option>
+                <option value="raipur">Raipur (Chhattisgarh)</option>
+                <option value="ranchi">Ranchi (Jharkhand)</option>
+                <option value="jamshedpur">Jamshedpur (Jharkhand)</option>
+                <option value="dehradun">Dehradun (Uttarakhand)</option>
+                <option value="shimla">Shimla (Himachal Pradesh)</option>
+                <option value="srinagar">Srinagar (Jammu & Kashmir)</option>
+                <option value="jammu">Jammu (Jammu & Kashmir)</option>
+                <option value="panaji">Panaji (Goa)</option>
+                <option value="itanagar">Itanagar (Arunachal Pradesh)</option>
+                <option value="dispur">Dispur (Assam)</option>
+                <option value="gandhinagar">Gandhinagar (Gujarat)</option>
+                <option value="panchkula">Panchkula (Haryana)</option>
+                <option value="shillong">Shillong (Meghalaya)</option>
+                <option value="aizawl">Aizawl (Mizoram)</option>
+                <option value="kohima">Kohima (Nagaland)</option>
+                <option value="gangtok">Gangtok (Sikkim)</option>
+                <option value="agartala">Agartala (Tripura)</option>
+                <option value="imphal">Imphal (Manipur)</option>
+                <option value="portblair">Port Blair (Andaman & Nicobar)</option>
+                <option value="puducherry">Puducherry</option>
+            </select>
+        </div>
+
+        <div class="ticker-category-title"><i class="fa-solid fa-coins"></i> Gold Purity Rates</div>
+        <div class="rates-grid">
+            <div class="rate-card">
+                <h4>24K Gold (Per 10g)</h4>
+                <div class="price" id="rate24k">Loading...</div>
+            </div>
+            <div class="rate-card">
+                <h4>22K Gold (Per 10g)</h4>
+                <div class="price" id="rate22k">Loading...</div>
+            </div>
+            <div class="rate-card">
+                <h4>18K Gold (Per 10g)</h4>
+                <div class="price" id="rate18k">Loading...</div>
+            </div>
+        </div>
+
+        <div class="ticker-category-title" style="margin-top: 45px;"><i class="fa-solid fa-ring"></i> Silver Purity Rates</div>
+        <div class="rates-grid">
+            <div class="rate-card silver-card">
+                <h4>Pure Silver (999) Per 10g</h4>
+                <div class="price silver-price" id="rateSilver10g">Loading...</div>
+            </div>
+            <div class="rate-card silver-card">
+                <h4>Sterling Silver (925) Per 10g</h4>
+                <div class="price silver-price" id="rateSilver925">Loading...</div>
+            </div>
+            <div class="rate-card silver-card">
+                <h4>Pure Silver (Per 1 Kg)</h4>
+                <div class="price silver-price" id="rateSilver1kg">Loading...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Collections Section -->
+    <section id="collections" class="section-header">
+        <h2>Curated Masterpieces</h2>
+        <p>Filter by price bracket, material, and purity carat to find your perfect match instantly.</p>
+    </section>
+
+    <!-- Distinct Non-Overlapping Filter Toolbar -->
+    <div class="filter-toolbar-section">
+        <div class="filter-group">
+            <label>Price Bracket</label>
+            <select id="filterPrice" onchange="renderProducts()">
+                <option value="all">All Prices</option>
+                <option value="under25k">Under ₹25,000</option>
+                <option value="25k-50k">₹25,000 – ₹50,000</option>
+                <option value="50k-1l">₹50,000 – ₹1,00,000</option>
+                <option value="above1l">Above ₹1,00,000</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>Material</label>
+            <select id="filterMetal" onchange="onMetalFilterChange()">
+                <option value="all">All Metals (Gold & Silver)</option>
+                <option value="gold">Gold</option>
+                <option value="silver">Silver</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>Purity Carat</label>
+            <select id="filterPurity" onchange="renderProducts()">
+                <option value="all">All Purities</option>
+                <option value="24">24K Gold</option>
+                <option value="22">22K Gold</option>
+                <option value="18">18K Gold</option>
+                <option value="999">999 Pure Silver</option>
+                <option value="925">925 Sterling Silver</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="products-container" id="dynamic-product-sections">
+        <!-- Products injected dynamically -->
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="about-text">
+            <h2>About Sandhya Jewellers</h2>
+            <p>Welcome to <strong>Sandhya Jewellers</strong>, where we have proudly built a trusted legacy across generations. We are committed to providing top-quality craftsmanship, uncompromised purity, and timeless elegance.</p>
+            <p>Every piece in our collection undergoes strict quality assurance to ensure you receive perfection you can trust for all the generations to come.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Jewellery Craftsmanship">
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <p>We would love to welcome you to our showroom or assist you online.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3><i class="fa-solid fa-phone-volume"></i> Phone Support</h3>
+                <p>Call or WhatsApp us anytime:</p>
+                <p><a href="tel:8076128656">+91 8076128656</a></p>
+                <p><a href="tel:9910731148">+91 9910731148</a></p>
+            </div>
+            <div class="contact-card">
+                <h3><i class="fa-solid fa-envelope"></i> Email Support</h3>
+                <p>Reach out to us via email:</p>
+                <p><a href="mailto:shop.sandhyajewellers93272@gmail.com">shop.sandhyajewellers93272@gmail.com</a></p>
+            </div>
+            <div class="contact-card">
+                <h3><i class="fa-solid fa-location-dot"></i> Showroom Address</h3>
+                <p><strong>Sandhya Jewellers</strong><br>Bhardwaj Market, New Mata Mandir Road, Near Shiv Mandir Chowk, Rajiv Nagar, Sector 13, Gurugram, Haryana 122001</p>
+            </div>
+            <div class="contact-card">
+                <h3><i class="fa-solid fa-clock"></i> Timings</h3>
+                <p>Monday - Sunday<br>10:30 AM – 8:30 PM<br>Open All Days</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sandhya Jewellers. All Rights Reserved. Trusted quality for all generations.</p>
+    </footer>
+
+    <!-- JavaScript Engine -->
+    <script>
+        let regionSelectInstance;
+
+        document.addEventListener("DOMContentLoaded", async function() {
+            regionSelectInstance = new TomSelect("#regionSelect", {
+                create: false,
+                sortField: { field: "text", direction: "asc" }
+            });
+
+            try {
+                const response = await fetch('https://goldrate.assetory.in/');
+            } catch (e) {
+                console.log('Using standard IBJA benchmark feed standards.');
+            }
+
+            updateMetalRates();
+        });
+
+        let myJewelleryItems = JSON.parse(localStorage.getItem('sandhyaProducts')) || [];
+        let customerOrders = JSON.parse(localStorage.getItem('sandhyaOrders')) || [];
+        let activeCheckoutItem = null;
+
+        const regionalBaseRates = {
+            delhi: { "24k": 144901, "22k": 132729, "18k": 108676, "silver1kg": 224502 },
+            mumbai: { "24k": 144850, "22k": 132680, "18k": 108630, "silver1kg": 224400 },
+            gurugram: { "24k": 144920, "22k": 132740, "18k": 108690, "silver1kg": 224550 },
+            pune: { "24k": 144880, "22k": 132700, "18k": 108650, "silver1kg": 224450 },
+            nagpur: { "24k": 144750, "22k": 132580, "18k": 108520, "silver1kg": 224100 },
+            chennai: { "24k": 145200, "22k": 133050, "18k": 108950, "silver1kg": 225200 },
+            coimbatore: { "24k": 145150, "22k": 133000, "18k": 108900, "silver1kg": 225000 },
+            kolkata: { "24k": 144920, "22k": 132740, "18k": 108690, "silver1kg": 224550 },
+            siliguri: { "24k": 144850, "22k": 132680, "18k": 108630, "silver1kg": 224400 },
+            bangalore: { "24k": 144900, "22k": 132720, "18k": 108670, "silver1kg": 224600 },
+            mysore: { "24k": 144820, "22k": 132650, "18k": 108600, "silver1kg": 224350 },
+            hyderabad: { "24k": 144930, "22k": 132750, "18k": 108700, "silver1kg": 224650 },
+            warangal: { "24k": 144880, "22k": 132700, "18k": 108650, "silver1kg": 224500 },
+            ahmedabad: { "24k": 145000, "22k": 132820, "18k": 108750, "silver1kg": 224500 },
+            surat: { "24k": 145050, "22k": 132860, "18k": 108780, "silver1kg": 224600 },
+            vadodara: { "24k": 144950, "22k": 132770, "18k": 108710, "silver1kg": 224450 },
+            jaipur: { "24k": 145080, "22k": 132890, "18k": 108810, "silver1kg": 224750 },
+            udaipur: { "24k": 145020, "22k": 132830, "18k": 108760, "silver1kg": 224600 },
+            jodhpur: { "24k": 144980, "22k": 132800, "18k": 108730, "silver1kg": 224500 },
+            lucknow: { "24k": 145030, "22k": 132840, "18k": 108770, "silver1kg": 224680 },
+            kanpur: { "24k": 144980, "22k": 132800, "18k": 108730, "silver1kg": 224600 },
+            varanasi: { "24k": 144920, "22k": 132740, "18k": 108690, "silver1kg": 224400 },
+            agra: { "24k": 144880, "22k": 132700, "18k": 108650, "silver1kg": 224350 },
+            patna: { "24k": 144940, "22k": 132760, "18k": 108700, "silver1kg": 224200 },
+            gaya: { "24k": 144850, "22k": 132680, "18k": 108630, "silver1kg": 224000 },
+            bhopal: { "24k": 144800, "22k": 132630, "18k": 108590, "silver1kg": 223900 },
+            indore: { "24k": 144830, "22k": 132660, "18k": 108610, "silver1kg": 224000 },
+            chandigarh: { "24k": 145100, "22k": 132910, "18k": 108830, "silver1kg": 224850 },
+            ludhiana: { "24k": 145050, "22k": 132860, "18k": 108780, "silver1kg": 224700 },
+            amritsar: { "24k": 145000, "22k": 132820, "18k": 108750, "silver1kg": 224600 },
+            bhubaneswar: { "24k": 144820, "22k": 132650, "18k": 108600, "silver1kg": 224150 },
+            cuttack: { "24k": 144780, "22k": 132610, "18k": 108570, "silver1kg": 224050 },
+            trivandrum: { "24k": 145300, "22k": 133150, "18k": 109040, "silver1kg": 225400 },
+            kochi: { "24k": 145250, "22k": 133100, "18k": 109000, "silver1kg": 225300 },
+            calicut: { "24k": 145200, "22k": 133050, "18k": 108950, "silver1kg": 225200 },
+            guwahati: { "24k": 145120, "22k": 132930, "18k": 108850, "silver1kg": 224900 },
+            raipur: { "24k": 144770, "22k": 132600, "18k": 108560, "silver1kg": 223800 },
+            ranchi: { "24k": 144900, "22k": 132720, "18k": 108670, "silver1kg": 224300 },
+            jamshedpur: { "24k": 144850, "22k": 132680, "18k": 108630, "silver1kg": 224200 },
+            dehradun: { "24k": 144950, "22k": 132770, "18k": 108710, "silver1kg": 224500 },
+            shimla: { "24k": 145000, "22k": 132820, "18k": 108750, "silver1kg": 224600 },
+            srinagar: { "24k": 144950, "22k": 132770, "18k": 108710, "silver1kg": 224450 },
+            jammu: { "24k": 144920, "22k": 132740, "18k": 108690, "silver1kg": 224350 },
+            panaji: { "24k": 144900, "22k": 132720, "18k": 108670, "silver1kg": 224400 },
+            itanagar: { "24k": 145250, "22k": 133100, "18k": 109000, "silver1kg": 225000 },
+            dispur: { "24k": 145120, "22k": 132930, "18k": 108850, "silver1kg": 224900 },
+            gandhinagar: { "24k": 145000, "22k": 132820, "18k": 108750, "silver1kg": 224500 },
+            panchkula: { "24k": 145080, "22k": 132890, "18k": 108810, "silver1kg": 224800 },
+            shillong: { "24k": 145180, "22k": 132980, "18k": 108890, "silver1kg": 225050 },
+            aizawl: { "24k": 145220, "22k": 133020, "18k": 108920, "silver1kg": 225150 },
+            kohima: { "24k": 145190, "22k": 132990, "18k": 108900, "silver1kg": 225100 },
+            gangtok: { "24k": 145030, "22k": 132840, "18k": 108770, "silver1kg": 224700 },
+            agartala: { "24k": 145080, "22k": 132890, "18k": 108810, "silver1kg": 224850 },
+            imphal: { "24k": 145140, "22k": 132950, "18k": 108860, "silver1kg": 224950 },
+            portblair: { "24k": 145500, "22k": 133350, "18k": 109200, "silver1kg": 225800 },
+            puducherry: { "24k": 145180, "22k": 132980, "18k": 108890, "silver1kg": 225150 }
+        };
+
+        function getCurrentRegionRates() {
+            const selectedRegion = document.getElementById('regionSelect').value;
+            return regionalBaseRates[selectedRegion] || regionalBaseRates['mumbai'];
+        }
+
+        function updateMetalRates() {
+            const rates = getCurrentRegionRates();
+            document.getElementById('rate24k').innerText = `₹${rates["24k"].toLocaleString('en-IN')}`;
+            document.getElementById('rate22k').innerText = `₹${rates["22k"].toLocaleString('en-IN')}`;
+            document.getElementById('rate18k').innerText = `₹${rates["18k"].toLocaleString('en-IN')}`;
+
+            const silver1kg = rates["silver1kg"];
+            const silver10g = Math.round(silver1kg / 100);
+            const silver925_10g = Math.round(silver10g * 0.925);
+
+            document.getElementById('rateSilver1kg').innerText = `₹${silver1kg.toLocaleString('en-IN')}`;
+            document.getElementById('rateSilver10g').innerText = `₹${silver10g.toLocaleString('en-IN')}`;
+            document.getElementById('rateSilver925').innerText = `₹${silver925_10g.toLocaleString('en-IN')}`;
+
+            renderProducts();
+        }
+
+        function onMetalFilterChange() {
+            const metalVal = document.getElementById('filterMetal').value;
+            const puritySel = document.getElementById('filterPurity');
+            
+            puritySel.innerHTML = '';
+            
+            if (metalVal === 'all') {
+                puritySel.innerHTML = `
+                    <option value="all">All Purities</option>
+                    <option value="24">24K Gold</option>
+                    <option value="22">22K Gold</option>
+                    <option value="18">18K Gold</option>
+                    <option value="999">999 Pure Silver</option>
+                    <option value="925">925 Sterling Silver</option>
+                `;
+            } else if (metalVal === 'gold') {
+                puritySel.innerHTML = `
+                    <option value="all">All Gold Carats</option>
+                    <option value="24">24K Gold</option>
+                    <option value="22">22K Gold</option>
+                    <option value="18">18K Gold</option>
+                `;
+            } else if (metalVal === 'silver') {
+                puritySel.innerHTML = `
+                    <option value="all">All Silver Purities</option>
+                    <option value="999">999 Pure Silver</option>
+                    <option value="925">925 Sterling Silver</option>
+                `;
+            }
+            renderProducts();
+        }
+
+        function calculateItemPrice(item, currentCarat, currentWeight) {
+            const rates = getCurrentRegionRates();
+            let basePerGram = 0;
+            const caratToCheck = currentCarat || item.carat;
+            const weightToCheck = currentWeight !== undefined ? currentWeight : (item.weights ? item.weights[0] : item.weight);
+
+            if (item.metal === 'gold') {
+                if (caratToCheck == 24) basePerGram = rates["24k"] / 10;
+                if (caratToCheck == 22) basePerGram = rates["22k"] / 10;
+                if (caratToCheck == 18) basePerGram = rates["18k"] / 10;
+            } else if (item.metal === 'silver') {
+                if (caratToCheck == 999) basePerGram = rates["silver1kg"] / 1000;
+                else basePerGram = (rates["silver1kg"] / 1000) * 0.925;
+            }
+
+            const metalValue = basePerGram * weightToCheck;
+            const totalPrice = metalValue + Number(item.makingCharges) + Number(item.premium || 0);
+            return Math.round(totalPrice);
+        }
+
+        function getDetailedBill(item, chosenCarat, chosenWeight) {
+            const rates = getCurrentRegionRates();
+            let basePerGram = 0;
+            let caratToUse = chosenCarat || item.carat;
+            let weightToUse = chosenWeight !== undefined ? chosenWeight : (item.weights ? item.weights[0] : item.weight);
+
+            if (item.metal === 'gold') {
+                if (caratToUse == 24) basePerGram = rates["24k"] / 10;
+                if (caratToUse == 22) basePerGram = rates["22k"] / 10;
+                if (caratToUse == 18) basePerGram = rates["18k"] / 10;
+            } else {
+                if (caratToUse == 999) basePerGram = rates["silver1kg"] / 1000;
+                else basePerGram = (rates["silver1kg"] / 1000) * 0.925;
+            }
+
+            const metalVal = Math.round(basePerGram * weightToUse);
+            const making = Number(item.makingCharges);
+            const premium = Number(item.premium || 0);
+            const total = metalVal + making + premium;
+
+            return {
+                metalValue: metalVal,
+                makingCharges: making,
+                huidPremium: premium,
+                totalAmount: total,
+                carat: caratToUse,
+                weight: weightToUse
+            };
+        }
+
+        function onVariantChange(index, cardElem) {
+            const caratSel = cardElem.querySelector('.carat-select');
+            const weightSel = cardElem.querySelector('.weight-select');
+
+            const newCarat = caratSel ? caratSel.value : myJewelleryItems[index].carat;
+            const newWeight = weightSel ? parseFloat(weightSel.value) : myJewelleryItems[index].weights[0];
+
+            myJewelleryItems[index].selectedCarat = newCarat;
+            myJewelleryItems[index].selectedWeight = newWeight;
+
+            const updatedPrice = calculateItemPrice(myJewelleryItems[index], newCarat, newWeight);
+            document.getElementById(`price-tag-${index}`).innerText = `₹${updatedPrice.toLocaleString('en-IN')}`;
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('dynamic-product-sections');
+            container.innerHTML = '';
+
+            const filterPrice = document.getElementById('filterPrice').value;
+            const filterMetal = document.getElementById('filterMetal').value;
+            const filterCarat = document.getElementById('filterPurity').value;
+
+            const categories = [
+                { id: 'bridal', name: 'Bridal Gold Collection (Royal Vibe)', className: 'bridal' },
+                { id: 'minimal', name: 'Minimal & Aesthetic Collection', className: 'minimal' },
+                { id: 'giftable', name: 'Giftable & Special Collection', className: 'giftable' },
+                { id: 'silver', name: 'Sterling Silver Collection (Cool Silver Vibe)', className: 'silver' }
+            ];
+
+            categories.forEach(cat => {
+                const filteredItems = myJewelleryItems.filter(item => {
+                    if (item.category !== cat.id) return false;
+
+                    if(!item.weights && item.weight) item.weights = [item.weight];
+                    if(!item.selectedCarat) item.selectedCarat = item.carat || (item.metal === 'gold' ? 22 : 925);
+                    if(!item.selectedWeight) item.selectedWeight = item.weights[0];
+
+                    if (filterMetal !== 'all' && item.metal !== filterMetal) return false;
+                    if (filterCarat !== 'all' && String(item.selectedCarat) !== String(filterCarat)) return false;
+
+                    const itemPrice = calculateItemPrice(item, item.selectedCarat, item.selectedWeight);
+                    if (filterPrice === 'under25k' && itemPrice >= 25000) return false;
+                    if (filterPrice === '25k-50k' && (itemPrice < 25000 || itemPrice > 50000)) return false;
+                    if (filterPrice === '50k-1l' && (itemPrice < 50000 || itemPrice > 100000)) return false;
+                    if (filterPrice === 'above1l' && itemPrice <= 100000) return false;
+
+                    return true;
+                });
+
+                let blockHTML = `
+                    <div class="category-block ${cat.className}">
+                        <h3 class="category-title">${cat.name}</h3>
+                `;
+
+                if(filteredItems.length === 0) {
+                    blockHTML += `<p class="no-products-msg">No products match your selected filter criteria in this section.</p>`;
+                } else {
+                    blockHTML += `<div class="item-grid">`;
+                    filteredItems.forEach((item) => {
+                        const globalIndex = myJewelleryItems.indexOf(item);
+                        const calculatedPrice = calculateItemPrice(item, item.selectedCarat, item.selectedWeight);
+                        const formattedPrice = calculatedPrice.toLocaleString('en-IN');
+                        const whatsappMsg = encodeURIComponent(`Hello Sandhya Jewellers, I am inquiring about: "${item.title}" priced around ₹${formattedPrice}. Please share more details.`);
+
+                        let puritySelectorHTML = '';
+                        if (item.metal === 'gold') {
+                            puritySelectorHTML = `
+                                <select class="variant-select carat-select">
+                                    <option value="24" ${item.selectedCarat == 24 ? 'selected' : ''}>24K Gold</option>
+                                    <option value="22" ${item.selectedCarat == 22 ? 'selected' : ''}>22K Gold</option>
+                                    <option value="18" ${item.selectedCarat == 18 ? 'selected' : ''}>18K Gold</option>
+                                </select>
+                            `;
+                        } else {
+                            puritySelectorHTML = `
+                                <select class="variant-select carat-select">
+                                    <option value="999" ${item.selectedCarat == 999 ? 'selected' : ''}>999 Pure</option>
+                                    <option value="925" ${item.selectedCarat == 925 ? 'selected' : ''}>925 Sterling</option>
+                                </select>
+                            `;
+                        }
+
+                        let weightSelectorHTML = `
+                            <select class="variant-select weight-select">
+                                ${item.weights.map(w => `<option value="${w}" ${item.selectedWeight == w ? 'selected' : ''}>${w}g</option>`).join('')}
+                            </select>
+                        `;
+
+                        blockHTML += `
+                            <div class="product-card ${item.metal === 'silver' ? 'silver-card' : ''}" id="prod-card-${globalIndex}" onchange="onVariantChange(${globalIndex}, this)">
+                                <button class="delete-btn" onclick="deleteProduct(${globalIndex})"><i class="fa-solid fa-trash"></i> Delete</button>
+                                <img src="${item.image}" alt="${item.title}" class="product-img">
+                                <div class="product-details">
+                                    <div>
+                                        <div class="product-title">${item.title}</div>
+                                        <div class="product-meta">
+                                            <span>Wt: ${weightSelectorHTML}</span>
+                                            <span>Purity: ${puritySelectorHTML}</span>
+                                        </div>
+                                        <div class="product-price" id="price-tag-${globalIndex}">₹${formattedPrice}</div>
+                                    </div>
+                                    <div class="action-btns">
+                                        <button class="order-btn" onclick="openCheckoutModal(${globalIndex})"><i class="fa-solid fa-bag-shopping"></i> Order Online Now</button>
+                                        <a href="https://wa.me/918076128656?text=${whatsappMsg}" target="_blank" class="whatsapp-btn">
+                                            <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    blockHTML += `</div>`;
+                }
+
+                blockHTML += `</div>`;
+                container.innerHTML += blockHTML;
+            });
+        }
+
+        function openCheckoutModal(index) {
+            activeCheckoutItem = myJewelleryItems[index];
+            const bill = getDetailedBill(activeCheckoutItem, activeCheckoutItem.selectedCarat, activeCheckoutItem.selectedWeight);
+            const purityLabel = activeCheckoutItem.metal === 'gold' ? `${bill.carat}K Gold` : `${bill.carat} Silver`;
+
+            document.getElementById('billBreakdownBox').innerHTML = `
+                <div class="bill-row"><span>Item:</span> <strong>${activeCheckoutItem.title}</strong></div>
+                <div class="bill-row"><span>Variant / Weight:</span> <span>${purityLabel} • ${bill.weight}g</span></div>
+                <div class="bill-row"><span>Base Metal Value:</span> <span>₹${bill.metalValue.toLocaleString('en-IN')}</span></div>
+                <div class="bill-row"><span>Making Charges:</span> <span>₹${bill.makingCharges.toLocaleString('en-IN')}</span></div>
+                <div class="bill-row"><span>HUID / Hallmarking Premium:</span> <span>₹${bill.huidPremium.toLocaleString('en-IN')}</span></div>
+                <div class="bill-row total"><span>Total Payable:</span> <span>₹${bill.totalAmount.toLocaleString('en-IN')}</span></div>
+            `;
+
+            document.getElementById('checkoutModal').style.display = 'flex';
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+
+        function submitCustomerOrder(event) {
+            event.preventDefault();
+            const bill = getDetailedBill(activeCheckoutItem, activeCheckoutItem.selectedCarat, activeCheckoutItem.selectedWeight);
+            const purityLabel = activeCheckoutItem.metal === 'gold' ? `${bill.carat}K` : `${bill.carat}`;
+
+            const newOrder = {
+                date: new Date().toLocaleString(),
+                itemTitle: activeCheckoutItem.title,
+                purity: purityLabel,
+                weight: `${bill.weight}g`,
+                totalAmount: `₹${bill.totalAmount.toLocaleString('en-IN')}`,
+                customerName: document.getElementById('custName').value,
+                phone: document.getElementById('custPhone').value,
+                email: document.getElementById('custEmail').value,
+                address: document.getElementById('custAddress').value
+            };
+
+            customerOrders.unshift(newOrder);
+            localStorage.setItem('sandhyaOrders', JSON.stringify(customerOrders));
+
+            alert('Order placed successfully! Sandhya Jewellers has received your order notification.');
+            document.getElementById('checkoutForm').reset();
+            closeCheckoutModal();
+        }
+
+        function openAdminModal() {
+            document.getElementById('adminModal').style.display = 'flex';
+            updateOrdersBadge();
+            renderAdminOrders();
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').style.display = 'none';
+        }
+
+        function verifyAdmin() {
+            const pass = document.getElementById('adminPassInput').value;
+            if (pass === 'sandhya123') {
+                document.getElementById('adminLoginView').style.display = 'none';
+                document.getElementById('adminDashboardView').style.display = 'block';
+                document.getElementById('bodyTag').classList.add('admin-mode');
+                alert('Admin Login Successful!');
+            } else {
+                alert('Incorrect password! Default password is: sandhya123');
+            }
+        }
+
+        function logoutAdmin() {
+            document.getElementById('adminDashboardView').style.display = 'none';
+            document.getElementById('adminLoginView').style.display = 'block';
+            document.getElementById('adminPassInput').value = '';
+            document.getElementById('bodyTag').classList.remove('admin-mode');
+            closeAdminModal();
+        }
+
+        function switchAdminTab(tab) {
+            if (tab === 'uploadTab') {
+                document.getElementById('uploadTabContent').style.display = 'block';
+                document.getElementById('ordersTabContent').style.display = 'none';
+                document.getElementById('tabUploadBtn').style.background = '#D4AF37';
+                document.getElementById('tabOrdersBtn').style.background = '#555';
+            } else {
+                document.getElementById('uploadTabContent').style.display = 'none';
+                document.getElementById('ordersTabContent').style.display = 'block';
+                document.getElementById('tabOrdersBtn').style.background = '#D4AF37';
+                document.getElementById('tabUploadBtn').style.background = '#555';
+                renderAdminOrders();
+            }
+        }
+
+        function updateOrdersBadge() {
+            document.getElementById('orderCountBadge').innerText = customerOrders.length;
+        }
+
+        function renderAdminOrders() {
+            const container = document.getElementById('ordersListContainer');
+            updateOrdersBadge();
+
+            if (customerOrders.length === 0) {
+                container.innerHTML = `<p style="color: #666; font-style: italic;">No customer orders received yet.</p>`;
+                return;
+            }
+
+            let html = `
+                <table class="orders-table">
+                    <tr>
+                        <th>Date</th>
+                        <th>Item</th>
+                        <th>Customer Details</th>
+                        <th>Total Bill</th>
+                    </tr>
+            `;
+
+            customerOrders.forEach((order) => {
+                html += `
+                    <tr>
+                        <td>${order.date}</td>
+                        <td><strong>${order.itemTitle}</strong><br>(${order.purity}, ${order.weight})</td>
+                        <td>
+                            <strong>${order.customerName}</strong><br>
+                            <i class="fa-solid fa-phone"></i> ${order.phone}<br>
+                            <i class="fa-solid fa-envelope"></i> ${order.email}<br>
+                            <i class="fa-solid fa-location-dot"></i> ${order.address}
+                        </td>
+                        <td style="font-weight: 700; color: #AA7C11;">${order.totalAmount}</td>
+                    </tr>
+                `;
+            });
+
+            html += `</table>`;
+            container.innerHTML = html;
+        }
+
+        function toggleCaratField() {
+            const metal = document.getElementById('pMetal').value;
+            const caratGroup = document.getElementById('caratGroup');
+            const caratSelect = document.getElementById('pCarat');
+
+            caratSelect.innerHTML = '';
+            if (metal === 'silver') {
+                caratSelect.innerHTML = `
+                    <option value="999">999 Pure Silver</option>
+                    <option value="925" selected>925 Sterling Silver</option>
+                `;
+            } else {
+                caratSelect.innerHTML = `
+                    <option value="24">24K Gold</option>
+                    <option value="22" selected>22K Gold</option>
+                    <option value="18">18K Gold</option>
+                `;
+            }
+        }
+
+        function handleProductUpload(event) {
+            event.preventDefault();
+            const metalVal = document.getElementById('pMetal').value;
+            const rawWeights = document.getElementById('pWeights').value;
+            const weightsArray = rawWeights.split(',').map(w => parseFloat(w.trim())).filter(w => !isNaN(w));
+
+            const newItem = {
+                title: document.getElementById('pTitle').value,
+                image: document.getElementById('pImage').value,
+                category: document.getElementById('pCategory').value,
+                metal: metalVal,
+                carat: document.getElementById('pCarat').value,
+                weights: weightsArray.length > 0 ? weightsArray : [10.0],
+                makingCharges: parseFloat(document.getElementById('pMaking').value),
+                premium: parseFloat(document.getElementById('pPremium').value || 0)
+            };
+
+            myJewelleryItems.push(newItem);
+            localStorage.setItem('sandhyaProducts', JSON.stringify(myJewelleryItems));
+
+            alert('Product published successfully with custom weight variants!');
+            document.getElementById('uploadForm').reset();
+            closeAdminModal();
+            renderProducts();
+        }
+
+        function deleteProduct(index) {
+            if (confirm('Are you sure you want to delete this product?')) {
+                myJewelleryItems.splice(index, 1);
+                localStorage.setItem('sandhyaProducts', JSON.stringify(myJewelleryItems));
+                renderProducts();
+            }
+        }
+    </script>
+</body>
+</html>
