@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Sandhya Jewellers in Gurugram. Trusted for generations, we provide uncompromised purity and exquisite gold and silver craftsmanship for every occasion.">
-    <title>Sandhya Jewellers | Trusted Quality for All Generations</title>
+    <title>Sandhya Jewellers | Timeless Elegance, Gold & Silver Purity</title>
     <!-- Google Fonts for Luxury Aesthetic -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -362,11 +361,11 @@
         }
 
         .category-block.giftable {
-            background-color: #fff9f0;
+            background-color: var(--fff9f0);
             border: 1px solid #f3e2c4;
         }
         .category-block.giftable h3 {
-            color: #8c6210;
+            color: var(--8c6210);
             border-bottom: 2px solid var(--primary-gold);
         }
 
@@ -758,8 +757,8 @@
                 <h2>Admin Login</h2>
                 <p style="margin-bottom: 15px; color: #666; font-size: 0.9rem;">Enter admin password to upload products and view customer orders.</p>
                 <div class="form-group">
-                    <label>Password (Default: sandhya123)</label>
-                    <input type="password" id="adminPassInput" placeholder="Enter password">
+                    <label>Password</label>
+                    <input type="password" id="adminPassInput" placeholder="Enter secure password">
                 </div>
                 <button class="btn" onclick="verifyAdmin()" style="width: 100%;">Login to Dashboard</button>
             </div>
@@ -1428,13 +1427,13 @@
 
         function verifyAdmin() {
             const pass = document.getElementById('adminPassInput').value;
-            if (pass === 'sandhya123') {
+            if (pass === 'manik93272') {
                 document.getElementById('adminLoginView').style.display = 'none';
                 document.getElementById('adminDashboardView').style.display = 'block';
                 document.getElementById('bodyTag').classList.add('admin-mode');
                 alert('Admin Login Successful!');
             } else {
-                alert('Incorrect password! Default password is: sandhya123');
+                alert('Incorrect password! Access denied.');
             }
         }
 
